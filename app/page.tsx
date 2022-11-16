@@ -1,19 +1,19 @@
 "use client";
-import React, { useState } from 'react'
+import React from 'react'
+import { useRecoilValue } from "recoil";
+import { squadState } from "../atoms/squad";
+
 import Chat from './chat';
 import Create from './create';
-import Player from './player'
-import Squad from './types/Squad';
+import Player from './player';
 
 function Home() {
-  const [squad, setSquad] = useState<Squad>({
-    users: ['marcindubiel']
-  });
+  const squad = useRecoilValue(squadState);
 
-  if(!squad) {
+  if(!squad.users.length) {
     return (
       <div className='w-screen h-screen flex flex-wrap items-center align-middle justify-center'>
-        <Create setSquad={setSquad} />
+        <Create/>
       </div>
     )
   }
