@@ -11,7 +11,7 @@ function Player({ twitchId }: { twitchId: string }) {
         const { users } = squad;
         const usersLength = users.length;
 
-        if(usersLength === 1) return '100';
+        if(usersLength === 1 || usersLength === 2) return '100';
         if(usersLength > 1 && usersLength < 4) return '50';
         if(usersLength > 4) return '33';
     };

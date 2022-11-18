@@ -1,6 +1,9 @@
 import React from 'react'
+
 import { useSetRecoilState } from "recoil";
 import { squadState } from "../atoms/squad";
+
+import Input from './Input';
 
 function Create() {
   const setSquad = useSetRecoilState(squadState);
@@ -21,7 +24,7 @@ function Create() {
 
   return (
     <div>
-      <input className='outline-none p-4 bg-white/30 rounded focus:bg-white/60 transition-all placeholder:text-black' placeholder="split twitch names with ', '" onKeyDown={handleKeyDown} />
+      <Input onKeyDown={handleKeyDown}/>
     </div>
   )
 }

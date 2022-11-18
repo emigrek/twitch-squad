@@ -1,14 +1,25 @@
 "use client";
 import React from 'react'
+
 import { useRecoilValue } from "recoil";
+import { useSetRecoilState } from "recoil";
+
+import { chatState } from "../atoms/chat";
 import { squadState } from "../atoms/squad";
 
-import Chat from './chat';
-import Create from './create';
-import Player from './player';
+import Chat from './Chat';
+import Create from './Create';
+import Player from './Player';
+import Select from './Select';
 
 function Home() {
   const squad = useRecoilValue(squadState);
+  const setChat = useSetRecoilState(chatState);
+  const options = squad.users.map((twitchId) => ({ value: twitchId, label: twitchId }));
+
+  const handleSquadChange = (e: React.ChangeEvent) => {
+    setChat(e.target.value);
+  }
 
   if(!squad.users.length) {
     return (
@@ -27,8 +38,9 @@ function Home() {
           ))
         }
       </div>
-      <div className='h-screen flex items-center align-middle justify-end'>
-        <Chat twitchId={squad.users[0]}/>
+      <div className='h-screen flex flex-col items-center align-middle justify-end'>
+        <Select label="Chat" className="h-[10%] w-full" options={options} onChange={handleSquadChange}/>
+        <Chat className="h-[90%]"/>
       </div>
     </div>
   )
