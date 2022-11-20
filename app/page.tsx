@@ -2,9 +2,6 @@
 import React from 'react'
 
 import { useRecoilValue } from "recoil";
-import { useSetRecoilState } from "recoil";
-
-import { chatState } from "../atoms/chat";
 import { squadState } from "../atoms/squad";
 
 import Chat from './Chat';
