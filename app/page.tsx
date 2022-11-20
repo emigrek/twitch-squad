@@ -4,10 +4,10 @@ import React from 'react'
 import { useRecoilValue } from "recoil";
 import { squadState } from "../atoms/squad";
 
-import Chat from './Chat';
+import Chat from '../app/Chat';
 import Create from './Create';
 import Navbar from './Navbar';
-import Player from './Player';
+import Player from '../app/Player';
 
 function Home() {
   const squad = useRecoilValue(squadState);
