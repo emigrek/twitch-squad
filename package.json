@@ -14,6 +14,7 @@
     "recoil": "^0.7.6"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.28.4-appdir.0",
     "@types/node": "18.11.3",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
