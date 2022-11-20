@@ -5,14 +5,13 @@ type Option = {
     label: string
 }
 
-function Select(props: { label: string, className: string, options: Option[], onChange: () => void }) {
+function Select(props: { options: Option[], onChange: () => void }) {
   return (
     <>
-        <label className="text-white text-lg">{props.label}</label>
-        <select onChange={props.onChange} className={props.className}>
+        <select onChange={props.onChange} className="font-medium cursor-pointer text-center outline-none text-white bg-transparent focus:bg-black rounded-md">
             {
                 props.options.map((option: Option) => (
-                    <option value={option.value}>{option.label}</option>
+                    <option key={option.value} value={option.value}>{option.label}</option>
                 ))
             }
         </select>

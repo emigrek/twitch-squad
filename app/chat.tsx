@@ -2,18 +2,21 @@ import React from 'react'
 
 import { useRecoilValue } from "recoil";
 import { chatState } from "../atoms/chat";
+import { TwitchChat } from 'react-twitch-embed';
 
-function Chat(props: { className: string}) {
+function Chat() {
     const chatUser = useRecoilValue(chatState);
 
     return (
-        <iframe 
-            src={`https://www.twitch.tv/embed/${chatUser}/chat?parent=localhost`}
-            sandbox="allow-scripts allow-same-origin allow-popups allow-modals"
-            className={props.className}
-        >
-        </iframe>
+        <TwitchChat
+            height="100%"
+            channel={chatUser || 'twitch'}
+            title={`${chatUser}'s chat`}
+            className="h-[90%]"
+            darkMode={true}
+        />
     )
+       
 }
 
 export default Chat

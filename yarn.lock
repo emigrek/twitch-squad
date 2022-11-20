@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@heroicons/react@^2.0.13":
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-2.0.13.tgz#9b1cc54ff77d6625c9565efdce0054a4bcd9074c"
+  integrity sha512-iSN5XwmagrnirWlYEWNPdCDj9aRYVD/lnK3JlsC9/+fqGF80k8C7rl+1HCvBX0dBoagKqOFBs6fMhJJ1hOg1EQ==
+
 "@next/env@13.0.3":
   version "13.0.3"
   resolved "https://registry.npmjs.org/@next/env/-/env-13.0.3.tgz"
@@ -567,6 +572,11 @@ react-dom@18.2.0:
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
+
+react-twitch-embed@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-twitch-embed/-/react-twitch-embed-3.0.1.tgz#59701297144ccede4e3fabe42c4789d66399d242"
+  integrity sha512-ZjsLB3AVDQiGpL30u5TNq0CrBSuZXMvhbTgNSeQwoT9ehGud3R4LHxA5PZlt/TEquRVEsNNryLtQbXekk/kyUQ==
 
 react@18.2.0:
   version "18.2.0"
