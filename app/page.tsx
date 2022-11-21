@@ -1,6 +1,4 @@
-"use client";
-import React from 'react'
-
+'use client';
 import { useRecoilValue } from "recoil";
 import { squadState } from "../atoms/squad";
 

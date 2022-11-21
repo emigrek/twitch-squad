@@ -1,13 +1,17 @@
 import React from 'react'
 
-function Input(props: { onChange: () => void, onKeyDown: () => void }) {
+function Input(props: { value: string, placeholder: string, onChange: () => void, onKeyDown: () => void }) {
   return (
-    <input 
-      onKeyDown={props.onKeyDown} 
-      onChange={props.onChange}
-      className='outline-none p-5 bg-white/30 rounded-xl focus:bg-white/60 transition-all placeholder:text-black/50 w-full' 
-      placeholder="split twitch names with ', '" 
-    />
+    <div className='w-full p-3 rounded-lg bg-white/50 text-black' >
+      <input 
+        value={props.value}
+        onKeyDown={props.onKeyDown} 
+        onChange={props.onChange}
+        className="bg-transparent outline-none placeholder:text-black/50"
+        placeholder={props.placeholder}
+      />
+    </div>
+    
   )
 }
 
