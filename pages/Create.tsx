@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
+import { SquaresPlusIcon } from '@heroicons/react/24/solid';
+import { RocketLaunchIcon } from '@heroicons/react/24/outline';
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { squadState } from "../atoms/squad";
 import { chatState } from "../atoms/chat";
 import { creatorState } from '../atoms/creator';
 
 import UserChip from './UserChip';
+import Tips from './Tips';
 
 function Create() {
   const [input, setInput] = useState('');
@@ -25,6 +28,11 @@ function Create() {
   const handleSubmit = () => {
     if(!squad.length) return;
     setInput('');
+    setCreator(!creator);
+  }
+
+  const handleClickAway = () => {
+    if(!squad.length) return;
     setCreator(!creator);
   }
 
@@ -50,14 +58,20 @@ function Create() {
   }, [squad]);
 
   return (
-    <div className="w-full absolute z-10 bg-black/80 backdrop-blur-md h-full flex items-center align-middle justify-center">
-      <div className='flex flex-col space-y-3 bg-black/50 p-4 rounded-lg'>
-        <div className="px-2 py-10">
-          <div className="flex flex-row items-center align-middle justify-center space-x-3 w-full">
+    <div className="w-full z-[1] absolute bg-black/90 backdrop-blur-md h-full flex items-center align-middle justify-center">
+      <div className='z-[3] flex flex-col space-y-3 bg-white/10 p-8 rounded-xl'>
+        <div className="text-center flex flex-col items-center">
+          <SquaresPlusIcon className="h-32 w-32 text-white" />
+          <h1 className="text-2xl text-white">Create</h1>
+        </div>
+        <div className="pb-8 pt-6">
+          <div className="max-w-xs flex flex-wrap flex-row items-center align-middle justify-center space-x-3 w-full gap-1">
             { 
               squad.length ? squad.map((user) => (
                 <UserChip key={user} onClick={handleChipClick} twitchId={user}/>
-              )) : <div className="text-xs text-white/20 py-3">Enter some streamers</div>
+              )) : (
+                <Tips/>
+              ) 
             }
           </div>
         </div>
@@ -72,8 +86,12 @@ function Create() {
               />
           </div>
         </div>
-        <div onClick={handleSubmit} className="cursor-pointer text-center rounded px-4 py-2 font-medium bg-white select-none">Go squad!</div>
+        <div onClick={handleSubmit} className={`${squad.length ? 'bg-green-500 cursor-pointer' : 'bg-red-500/50'} transition-colors text-center rounded p-4 font-medium select-none space-x-1 flex flex-row justify-center items-center`}>
+          <div>Squad!</div>
+          <RocketLaunchIcon className="h-5 w-5" />
+        </div>
       </div>
+      <div onClick={handleClickAway}  className="absolute z-[2] w-full h-full"></div>
     </div>
   )
 }

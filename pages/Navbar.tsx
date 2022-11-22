@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChatBubbleOvalLeftEllipsisIcon, SquaresPlusIcon } from '@heroicons/react/24/solid'
+import { ChatBubbleOvalLeftEllipsisIcon, SquaresPlusIcon } from '@heroicons/react/24/outline'
 
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { squadState } from "../atoms/squad";
