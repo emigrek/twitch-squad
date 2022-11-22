@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react'
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { squadState } from "../atoms/squad";
 import { chatState } from "../atoms/chat";
-
-import Input from './Input';
 import UserChip from './UserChip';
 
 function Create() {
@@ -14,7 +12,7 @@ function Create() {
   const setSquad = useSetRecoilState(squadState);
   const setChat = useSetRecoilState(chatState);
 
-  const handleChange = (e: React.ChangeEvent) => {
+  const handleChange: React.ChangeEventHandler = (e: React.ChangeEvent) => {
     const target = e.target as HTMLInputElement;
     const value = target.value;
     setInput(value);
@@ -24,7 +22,7 @@ function Create() {
     setSquad((oldSquad) => oldSquad.filter((user) => user !== twitchId));
   }
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown: React.KeyboardEventHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if(e.key == "Enter" && input) {
       e.preventDefault();
       setSquad((oldSquad) => [...oldSquad, input]);
@@ -53,7 +51,14 @@ function Create() {
         </div>
       </div>
       <div className="flex flex-row rounded-md">
-        <Input value={input} placeholder="loltyler1" onChange={handleChange} onKeyDown={handleKeyDown}/>
+        <div className='w-full flex items-center p-3 rounded-lg bg-white/50 text-black' >
+          <input 
+            className="bg-transparent outline-none placeholder:text-black/50"
+            value={input}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+          />
+      </div>
       </div>
     </div>
   )

@@ -1,7 +1,4 @@
 import React from 'react'
-import MiniIcon from './MiniIcon'
-
-import { SquaresPlusIcon } from '@heroicons/react/24/solid'
 import { ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/react/24/solid'
 
 import { useRecoilValue, useSetRecoilState } from "recoil";
@@ -14,14 +11,12 @@ import Create from './Create';
 function Navbar() {
     const squad = useRecoilValue(squadState);
     const chat = useRecoilValue(chatState);
-
     const setChat = useSetRecoilState(chatState);
-    const setSquad = useSetRecoilState(squadState);
 
     const options = squad.map((twitchId) => ({ value: twitchId, label: twitchId }));
 
-    const handleSquadChange = (e: React.ChangeEvent) => {
-        setChat(e.target.value);
+    const handleSquadChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+       setChat(e.target.value);
     }
 
     return (
@@ -29,7 +24,7 @@ function Navbar() {
             <Create/>
             { chat ? (
                 <NavbarItem>
-                    <MiniIcon Icon={ChatBubbleOvalLeftEllipsisIcon}/>
+                    <ChatBubbleOvalLeftEllipsisIcon className="h-5 w-5 text-white" />
                     <Select options={options} onChange={handleSquadChange}/>
                 </NavbarItem>
             ) : null }
