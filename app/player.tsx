@@ -8,8 +8,7 @@ function Player({ twitchId }: { twitchId: string }) {
     const squad = useRecoilValue(squadState);
 
     const getFlexBasis = () => {
-        const { users } = squad;
-        const usersLength = users.length;
+        const usersLength = squad.length;
 
         if(usersLength === 1 || usersLength === 2) return '100';
         if(usersLength > 1 && usersLength < 4) return '50';

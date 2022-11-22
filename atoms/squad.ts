@@ -1,9 +1,6 @@
 import { atom } from "recoil";
-import Squad from "../types/Squad";
 
-export const squadState = atom<Squad>({
+export const squadState = atom<string[]>({
     key: 'squad',
-    default: {
-        users: []
-    }
+    default: []
 }); 

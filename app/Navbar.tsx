@@ -9,35 +9,30 @@ import { squadState } from "../atoms/squad";
 import { chatState } from "../atoms/chat";
 import Select from './Select';
 import NavbarItem from './NavbarItem';
+import Create from './Create';
 
 function Navbar() {
     const squad = useRecoilValue(squadState);
+    const chat = useRecoilValue(chatState);
 
     const setChat = useSetRecoilState(chatState);
     const setSquad = useSetRecoilState(squadState);
 
-    const options = squad.users.map((twitchId) => ({ value: twitchId, label: twitchId }));
+    const options = squad.map((twitchId) => ({ value: twitchId, label: twitchId }));
 
     const handleSquadChange = (e: React.ChangeEvent) => {
         setChat(e.target.value);
     }
 
-    const handleSquadClear = () => {
-        setSquad({
-            users: []
-        })
-    }
-
     return (
-        <div className="h-[10%] bg-[#18181b] w-full flex items-center align-middle justify-between text-white px-4">
-            <NavbarItem onClick={handleSquadClear}>
-                <MiniIcon Icon={SquaresPlusIcon}/>
-                <div className='font-medium'>Creator</div>
-            </NavbarItem>
-            <NavbarItem>
-                <MiniIcon Icon={ChatBubbleOvalLeftEllipsisIcon}/>
-                <Select options={options} onChange={handleSquadChange}/>
-            </NavbarItem>
+        <div className="h-[20%] bg-[#18181b] w-full flex flex-col items-center align-middle justify-between text-white px-4">
+            <Create/>
+            { chat ? (
+                <NavbarItem>
+                    <MiniIcon Icon={ChatBubbleOvalLeftEllipsisIcon}/>
+                    <Select options={options} onChange={handleSquadChange}/>
+                </NavbarItem>
+            ) : null }
         </div>
     )
 }
