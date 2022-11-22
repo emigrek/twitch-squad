@@ -1,4 +1,3 @@
-'use client';
 import Chat from './Chat';
 import Navbar from './Navbar';
 import Squad from "./Squad";

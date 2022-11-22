@@ -1,4 +1,3 @@
-'use client';
 import React, { useState, useEffect } from 'react'
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { squadState } from "../atoms/squad";
@@ -51,10 +50,11 @@ function Create() {
         </div>
       </div>
       <div className="flex flex-row rounded-md">
-        <div className='w-full flex items-center p-3 rounded-lg bg-white/50 text-black' >
+        <div className='w-full flex items-center p-2 rounded-lg bg-white/50 text-black' >
           <input 
             className="bg-transparent outline-none placeholder:text-black/50"
             value={input}
+            placeholder="loltyler1"
             onChange={handleChange}
             onKeyDown={handleKeyDown}
           />
