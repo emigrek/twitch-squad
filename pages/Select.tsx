@@ -9,9 +9,9 @@ function Select(props: { options: Option[], onChange: (e: React.ChangeEvent<HTML
   return (
     <select onChange={props.onChange} className="font-medium cursor-pointer text-center outline-none text-white bg-transparent focus:bg-black rounded-md">
       {
-          props.options.map((option: Option) => (
-              <option key={option.value} value={option.value}>{option.label}</option>
-          ))
+        props.options?.map((option: Option) => (
+          <option key={option.value} value={option.value}>{option.label}</option>
+        ))
       }
     </select>
   )

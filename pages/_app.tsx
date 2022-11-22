@@ -6,7 +6,7 @@ import {
 
 import type { AppProps } from 'next/app'
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className='bg-black overflow-x-hidden m-0 p-0'>
       <RecoilRoot>
