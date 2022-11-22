@@ -1,17 +1,20 @@
 import React from 'react'
-import { ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/react/24/solid'
+import { ChatBubbleOvalLeftEllipsisIcon, SquaresPlusIcon } from '@heroicons/react/24/solid'
 
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { squadState } from "../atoms/squad";
 import { chatState } from "../atoms/chat";
 import Select from './Select';
 import NavbarItem from './NavbarItem';
-import Create from './Create';
+import { creatorState } from '../atoms/creator';
 
 function Navbar() {
     const squad = useRecoilValue(squadState);
     const chat = useRecoilValue(chatState);
+    const creator = useRecoilValue(creatorState);
+
     const setChat = useSetRecoilState(chatState);
+    const setCreator = useSetRecoilState(creatorState);
 
     const options = squad.map((twitchId) => ({ value: twitchId, label: twitchId }));
 
@@ -20,11 +23,14 @@ function Navbar() {
     }
 
     return (
-        <div className="h-[20%] bg-[#18181b] w-full flex flex-col items-center align-middle justify-between text-white px-4">
-            <Create/>
+        <div className="h-[10%] bg-[#18181b] w-full px-8 flex flex-row items-center align-middle justify-between text-white">
+            <NavbarItem onClick={() => setCreator(!creator) }>
+                <SquaresPlusIcon className="h-5 w-5" />
+                <div className='font-medium'>Creator</div>
+            </NavbarItem>
             { chat ? (
                 <NavbarItem>
-                    <ChatBubbleOvalLeftEllipsisIcon className="h-5 w-5 text-white" />
+                    <ChatBubbleOvalLeftEllipsisIcon className="h-5 w-5" />
                     <Select options={options} onChange={handleSquadChange}/>
                 </NavbarItem>
             ) : null }
