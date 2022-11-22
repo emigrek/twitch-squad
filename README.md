@@ -1,4 +1,6 @@
-## Getting Started
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ddb93033-22c1-484b-968f-1f15aaaec5cf/deploy-status)](https://app.netlify.com/sites/twitch-squad/deploys)
+
+## Running your instance
 
 First, run the development server:
 
