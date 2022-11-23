@@ -11,9 +11,9 @@ function Player({ twitchId }: { twitchId: string }) {
 
         if(usersLength === 1 || usersLength === 2) return '100';
         if(usersLength > 1 && usersLength < 4) return '50';
-        if(usersLength > 4) return '33';
+        if(usersLength > 4) return '33.33333333';
     };
-
+    
     return (
         <div className="flex justify-center items-center flex-grow-0 flex-shrink-0" style={{ flexBasis: `${getFlexBasis()}%`}} >
             <TwitchPlayerNonInteractive

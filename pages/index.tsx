@@ -4,18 +4,18 @@ import Squad from "./Squad";
 
 import { useRecoilValue } from "recoil";
 import { creatorState } from "../atoms/creator";
-import Create from './Create';
+import Setup from './Setup';
 
 function Home() {
   const creator = useRecoilValue(creatorState);
   
   return (
-    <div className="w-screen h-screen flex items-center align-middle justify-between gap-0">
-      { creator ? (<Create/>) : null }
+    <div className="w-screen h-screen flex flex-col lg:flex-row items-center align-middle justify-between gap-0">
+      { creator ? (<Setup/>) : null }
       <div className="w-full h-screen flex flex-wrap justify-between">
         <Squad/>
       </div>
-      <div className='w-[350] h-screen flex flex-col items-center align-middle justify-end bg-[#18181b]'>
+      <div className='h-full flex flex-col items-center align-middle justify-end bg-[#18181b]'>
         <Navbar/>
         <Chat/>
       </div>

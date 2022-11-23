@@ -1,5 +1,6 @@
 import React from 'react'
-import { ChatBubbleOvalLeftEllipsisIcon, SquaresPlusIcon } from '@heroicons/react/24/outline'
+import { ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/react/24/outline'
+import { SquaresPlusIcon } from '@heroicons/react/24/solid'
 
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { squadState } from "../atoms/squad";
@@ -23,13 +24,13 @@ function Navbar() {
     }
 
     return (
-        <div className="h-[10%] bg-[#18181b] w-full px-8 flex flex-row items-center align-middle justify-between text-white">
+        <div className="h-[6%] bg-[#18181b] w-full my-4 xl:my-0 px-8 flex flex-row items-center align-middle justify-between text-white">
             <NavbarItem onClick={() => setCreator(!creator) }>
                 <SquaresPlusIcon className="h-5 w-5" />
-                <div className='font-medium'>Creator</div>
+                <div className='font-medium'>Setup</div>
             </NavbarItem>
             { chat ? (
-                <NavbarItem>
+                <NavbarItem outlined>
                     <ChatBubbleOvalLeftEllipsisIcon className="h-5 w-5" />
                     <Select options={options} onChange={handleSquadChange}/>
                 </NavbarItem>
