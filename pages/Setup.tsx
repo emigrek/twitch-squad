@@ -83,7 +83,7 @@ function Create() {
 
   return (
     <div className="w-full z-[1] absolute bg-black/90 backdrop-blur-md h-full flex items-center align-middle justify-center">
-      <div className='z-[3] flex flex-col space-y-7 bg-[#18181b] p-6 w-[350px] rounded-xl'>
+      <div className='z-[3] flex flex-col space-y-7 bg-foreground p-6 w-[350px] rounded-xl'>
         <div className="text-center flex flex-col items-center space-y-3">
           <SquaresPlusIcon className="h-32 w-32 text-white" />
           <h1 className="text-2xl text-white">Setup</h1>

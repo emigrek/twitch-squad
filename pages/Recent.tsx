@@ -28,7 +28,7 @@ function Recent() {
                 </div>
             </div>
             <div className='relative w-[300px]'>
-                <div className="absolute w-[50px] right-0 top-0 bottom-0 bg-gradient-to-r from-black/0 to-background z-20 h-12 pointer-events-none"></div>
+                <div className="absolute w-[50px] right-0 top-0 bottom-0 bg-gradient-to-r from-black/0 to-foreground z-20 h-12 pointer-events-none"></div>
                 <div className="flex flex-row items-center justify-start space-x-3 overflow-x-hidden snap-x snap-center">
                     {
                         uniqueHistory.map((squad, index) => (
