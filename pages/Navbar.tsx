@@ -24,7 +24,7 @@ function Navbar() {
     }
 
     return (
-        <div className="h-[6%] bg-[#18181b] w-full my-4 xl:my-0 px-8 flex flex-row items-center align-middle justify-between text-white">
+        <div className="h-[6%] bg-background w-full my-4 xl:my-0 px-3 flex flex-row items-center align-middle justify-between text-white">
             <NavbarItem onClick={() => setCreator(!creator) }>
                 <SquaresPlusIcon className="h-5 w-5" />
                 <div className='font-medium'>Setup</div>

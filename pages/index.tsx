@@ -10,12 +10,12 @@ function Home() {
   const creator = useRecoilValue(creatorState);
   
   return (
-    <div className="w-screen h-screen flex flex-col lg:flex-row items-center align-middle justify-between gap-0">
+    <div className="w-screen h-screen flex flex-col sm:flex-row items-center align-middle justify-between gap-0">
       { creator ? (<Setup/>) : null }
       <div className="w-full h-screen flex flex-wrap justify-between">
         <Squad/>
       </div>
-      <div className='h-full flex flex-col items-center align-middle justify-end bg-[#18181b]'>
+      <div className='h-full flex flex-col items-center align-middle justify-end bg-background'>
         <Navbar/>
         <Chat/>
       </div>
