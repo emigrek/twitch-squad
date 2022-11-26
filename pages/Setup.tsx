@@ -81,7 +81,7 @@ function Create() {
 
   return (
     <div className="w-full z-[1] absolute bg-black/80 backdrop-blur-lg h-screen flex items-center align-middle justify-center">
-      <div className='z-[3] flex flex-col space-y-7 bg-background p-6 w-[400px] rounded-xl'>
+      <div className='z-[3] flex flex-col space-y-7 bg-background p-6 w-[350px] rounded-xl'>
         <div className="space-y-3 items-center justify-center align-middle shadow-md">
           <div className="bg-foreground border-2 border-dashed border-white/20 rounded">
             {
@@ -94,7 +94,7 @@ function Create() {
                   }
                 </div>
               ) : (
-                <div className="flex flex-wrap justify-center py-8">
+                <div className="flex flex-wrap justify-center py-8 aspect-video">
                   <Tips/>
                 </div>
               )
@@ -102,7 +102,7 @@ function Create() {
           </div>
         </div>
         <div className="flex flex-col space-y-2">
-          <div className="group flex flex-col rounded-md bg-foreground border-white/20">
+          <div className="group px-3 flex flex-row items-center align-middle rounded-md bg-foreground border-white/20">
             <input 
               ref={inputRef}
               className={`transition-all bg-transparent rounded-md border-transparent w-full text-center outline-none py-3 text-lg placeholder:text-white/50`}

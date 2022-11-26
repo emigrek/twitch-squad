@@ -27,7 +27,7 @@ function Recent() {
                     <SparklesIcon className='h-4 w-4'/>
                 </div>
             </div>
-            <div className='relative w-[350px] p-2'>
+            <div className='relative w-[300px] p-2'>
                 <div className="absolute w-[50px] right-0 top-0 bottom-0 bg-gradient-to-r from-black/0 to-background z-20 h-18 pointer-events-none"></div>
                 <div className="flex flex-row items-center justify-start space-x-3 overflow-x-hidden snap-x snap-center">
                     {
