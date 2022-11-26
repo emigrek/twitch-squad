@@ -20,7 +20,7 @@ function Chat() {
         )
     else
         return (
-            <div className="h-[90%] w-[350px] text-white/20 text-2xl flex items-center align-middle justify-center border-white/20 rounded-lg border-[0.35rem] border-dashed">
+            <div className="h-[90%] bg-foreground w-[350px] mx-2 mb-2  text-white/20 text-2xl flex items-center align-middle justify-center border-white/20 rounded-lg border-[0.15rem] border-dashed">
                 Chat
             </div>
         )
