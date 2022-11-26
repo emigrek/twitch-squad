@@ -1,20 +1,13 @@
 import React from 'react'
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { squadState } from '../atoms/squad';
+import getFlexBasis from '../utils/functions';
 import Tips from './Tips'
 import UserChip from './UserChip';
 
 function SquadPreview() {
     const squad = useRecoilValue(squadState);
     const setSquad = useSetRecoilState(squadState);
-
-    const getFlexBasis = () => {
-        const usersLength = squad.length;
-
-        if(usersLength === 1 || usersLength === 2) return '100';
-        if(usersLength > 1 && usersLength <= 4) return '50';
-        if(usersLength > 4) return '33.33333333';
-    };
 
     const handleChipClick = (twitchId: string) => {
         setSquad((oldSquad) => oldSquad.filter((user) => user !== twitchId));
@@ -28,7 +21,7 @@ function SquadPreview() {
                     <div className="flex flex-wrap justify-between">
                         { 
                             squad.map((user) => (
-                                <UserChip style={{ flexBasis: `${getFlexBasis()}%`}} key={user} onClick={handleChipClick} twitchId={user}/>
+                                <UserChip style={{ flexBasis: `${getFlexBasis(squad.length)}%`}} key={user} onClick={handleChipClick} twitchId={user}/>
                             ))
                         }
                     </div>
