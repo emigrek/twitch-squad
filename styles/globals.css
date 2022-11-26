@@ -5,3 +5,7 @@
 html, body {
     background: '#0e0e10';
 }
+
+:root {
+    color-scheme: dark;
+}

@@ -6,7 +6,7 @@ type Option = {
 }
 
 function Select(props: { options: Option[], onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void }) {
-  return (
+return (
     <select onChange={props.onChange} className="font-medium py-1 pr-3 cursor-pointer text-center outline-none bg-transparent focus:bg-black focus:text-white rounded-md">
       {
         props.options?.map((option: Option) => (
