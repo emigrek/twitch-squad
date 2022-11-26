@@ -1,7 +1,9 @@
 import React from 'react'
+import { TwitchPlayerNonInteractive } from 'react-twitch-embed';
+
 import { useRecoilValue } from "recoil";
 import { squadState } from "../atoms/squad";
-import { TwitchPlayerNonInteractive } from 'react-twitch-embed';
+
 import getFlexBasis from '../utils/functions';
 
 function Player({ twitchId }: { twitchId: string }) {

@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useRecoilValue } from "recoil";
 import { chatState } from "../atoms/chat";
+
 import { TwitchChat } from 'react-twitch-embed';
 
 function Chat() {

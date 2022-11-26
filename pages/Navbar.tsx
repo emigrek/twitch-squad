@@ -1,11 +1,12 @@
 import React from 'react'
-import { Squares2X2Icon, ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/react/24/solid'
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import { creatorState } from '../atoms/creator';
 import { useRouter } from 'next/router'
 
 import { squadState } from "../atoms/squad";
 import { chatState } from "../atoms/chat";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { creatorState } from '../atoms/creator';
+
+import { Squares2X2Icon, ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/react/24/solid'
 
 import Select from './Select';
 import NavbarItem from './NavbarItem';

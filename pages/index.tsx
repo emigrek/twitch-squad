@@ -1,10 +1,11 @@
 import Chat from './Chat';
 import Navbar from './Navbar';
 import Squad from "./Squad";
+import Setup from './Setup';
 
 import { useRecoilValue } from "recoil";
 import { creatorState } from "../atoms/creator";
-import Setup from './Setup';
+
 
 function Home() {
   const creator = useRecoilValue(creatorState);

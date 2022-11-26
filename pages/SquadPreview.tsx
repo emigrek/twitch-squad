@@ -1,7 +1,10 @@
 import React from 'react'
+
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { squadState } from '../atoms/squad';
+
 import getFlexBasis from '../utils/functions';
+
 import Tips from './Tips'
 import UserChip from './UserChip';
 

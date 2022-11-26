@@ -1,8 +1,10 @@
-import { SparklesIcon } from '@heroicons/react/24/solid';
 import React from 'react'
+import { SparklesIcon } from '@heroicons/react/24/solid';
+
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { historyState } from '../atoms/history';
 import { squadState } from '../atoms/squad';
+
 import UserChip from './UserChip';
 
 function Recent() {

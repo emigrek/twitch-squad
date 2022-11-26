@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { RocketLaunchIcon as RocketLaunchIconOutline } from '@heroicons/react/24/outline';
 import { RocketLaunchIcon as RocketLaunchIconSolid } from '@heroicons/react/24/solid';
+
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { squadState } from "../atoms/squad";
 import { chatState } from "../atoms/chat";
@@ -65,7 +66,7 @@ function Create() {
       <div className='z-[3] flex flex-col space-y-7 bg-background p-6 w-[350px] rounded-xl'>
         <SquadPreview/>
         <div className="flex flex-col space-y-2">
-          <Input value={input} onChange={handleChange} onKeyDown={handleKeyDown}/>
+          <Input placeholder="loltyler1" value={input} onChange={handleChange} onKeyDown={handleKeyDown}/>
           <Button onClick={handleSubmit} className={`${squad.length && squad.length != 6 ? 'bg-green-600 transition-all hover:bg-green-500 cursor-pointer shadow-lg shadow-green-600/50' : 'bg-red-900'} text-black transition-colors text-center rounded p-4 font-medium select-none space-x-1 flex flex-row justify-center items-center`}>
             <div>Squad!</div>
             {

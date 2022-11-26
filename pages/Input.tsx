@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 
-function Input(props: { value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void, onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void }) {
+function Input(props: { placeholder: string, value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void, onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void }) {
     const inputRef = useRef(null);
 
     useEffect(() => {
@@ -15,7 +15,7 @@ function Input(props: { value: string, onChange: (e: React.ChangeEvent<HTMLInput
                 ref={inputRef}
                 className={`transition-all bg-transparent rounded-md border-transparent w-full text-center outline-none py-3 text-lg placeholder:text-white/50`}
                 value={props.value}
-                placeholder="loltyler1"
+                placeholder={props.placeholder}
                 onChange={props.onChange}
                 onKeyDown={props.onKeyDown}
             />
