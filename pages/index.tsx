@@ -10,7 +10,7 @@ function Home() {
   const creator = useRecoilValue(creatorState);
   
   return (
-    <div className="w-screen flex flex-col sm:flex-row items-center align-middle justify-between gap-0">
+    <div className="w-full flex flex-col sm:flex-row items-center align-middle justify-between gap-0">
       { creator ? (<Setup/>) : null }
       <div className="w-full h-screen flex flex-wrap justify-between">
         <Squad/>

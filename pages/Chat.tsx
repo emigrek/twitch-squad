@@ -13,7 +13,7 @@ function Chat() {
                 height="100%"
                 channel={chatUser || 'twitch'}
                 title={`${chatUser}'s chat`}
-                className="h-[94%]"
+                className="h-[94%] mx-2 mb-2 rounded-lg"
                 darkMode={true}
             />
         )

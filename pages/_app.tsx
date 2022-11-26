@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>Twitch Squad</title>
       </Head>
-      <div className='bg-background overflow-x-hidden m-0 p-0'>
+      <div className='bg-background m-0 p-0'>
         <RecoilRoot>
           <Component {...pageProps} />
         </RecoilRoot>
