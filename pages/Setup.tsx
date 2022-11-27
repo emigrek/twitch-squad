@@ -6,7 +6,6 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { squadState } from "../atoms/squad";
 import { chatState } from "../atoms/chat";
 import { creatorState } from '../atoms/creator';
-import { historyState } from '../atoms/history';
 
 import Recent from './Recent';
 import SquadPreview from './SquadPreview';
@@ -22,7 +21,6 @@ function Create() {
   const setSquad = useSetRecoilState(squadState);
   const setChat = useSetRecoilState(chatState);
   const setCreator = useSetRecoilState(creatorState);
-  const setHistory = useSetRecoilState(historyState);
 
   const handleChange: React.ChangeEventHandler = (e: React.ChangeEvent) => {
     const target = e.target as HTMLInputElement;
@@ -33,14 +31,20 @@ function Create() {
   const handleSubmit = () => {
     if(!squad.length) return;
     setInput('');
-    setHistory((oldHistory) => [...oldHistory, squad]);
+    updateHistory(squad);
     setCreator(!creator);
   }
 
   const handleClickAway = () => {
     if(!squad.length) return;
-    setHistory((oldHistory) => [...oldHistory, squad]);
+    updateHistory(squad);
     setCreator(!creator);
+  }
+
+  const updateHistory = (squad: string[]) => {
+    var history = JSON.parse(localStorage.getItem('squad-history') || '[]');
+    var unique = [...history, squad].map(e => e.join(',')).reverse().filter((e, i, a) => a.indexOf(e) === i).reverse().map(e => e.split(',')).reverse();
+    localStorage.setItem('squad-history', JSON.stringify(unique));
   }
 
   const handleKeyDown: React.KeyboardEventHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
