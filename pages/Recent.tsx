@@ -29,16 +29,18 @@ function Recent() {
                 </div>
             </div>
             <div className='relative w-[300px] p-2'>
-                <div className="absolute w-[50px] right-0 top-0 bottom-0 bg-gradient-to-r from-black/0 to-background z-20 h-18 pointer-events-none"></div>
+                <div className="absolute w-[50px] right-0 top-0 bottom-0 bg-gradient-to-r from-background/0 to-background z-20 h-14 pointer-events-none"></div>
                 <div className="flex flex-row items-center justify-start space-x-3 overflow-x-hidden snap-x snap-center">
                     {
                         localHistory.map((squad, index) => (
                             <div onClick={() => {
                                 restore(squad);
                             }} className='cursor-pointer hover:shadow-lg hover:shadow-blue-700/50 hover:bg-blue-700 bg-blue-800/80 transition-all rounded-lg flex flex-row p-2 space-x-1 text-white' key={index}>
-                                {squad.map((user, index) => (
-                                    <UserChip mini key={index} twitchId={user}/>
-                                ))}
+                                {
+                                    squad.map((user, index) => (
+                                        <UserChip mini key={index} twitchId={user}/>
+                                    ))
+                                }
                             </div>
                         )
                     )}

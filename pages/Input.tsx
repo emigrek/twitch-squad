@@ -10,7 +10,7 @@ function Input(props: { placeholder: string, value: string, onChange: (e: React.
     }, []);
 
     return (
-        <div className="group px-3 flex flex-row items-center align-middle rounded-md bg-foreground border-white/20">
+        <div className="transition-all hover:brightness-150 group px-3 flex flex-row items-center align-middle rounded-md bg-foreground border-white/20">
             <input 
                 ref={inputRef}
                 className={`transition-all bg-transparent rounded-md border-transparent w-full text-center outline-none py-3 text-lg placeholder:text-white/50`}

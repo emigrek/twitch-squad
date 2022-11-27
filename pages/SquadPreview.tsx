@@ -21,7 +21,7 @@ function SquadPreview() {
             <div className="bg-foreground border-2 border-dashed border-white/20 rounded">
             {
                 squad.length ? (
-                    <div className="flex flex-wrap justify-between">
+                    <div className={`aspect-video items-center flex flex-wrap justify-between`}>
                         { 
                             squad.map((user) => (
                                 <UserChip style={{ flexBasis: `${getFlexBasis(squad.length)}%`}} key={user} onClick={handleChipClick} twitchId={user}/>
