@@ -1,5 +1,4 @@
 import React from 'react'
-import { useRouter } from 'next/router'
 
 import { squadState } from "../atoms/squad";
 import { chatState } from "../atoms/chat";
@@ -13,7 +12,6 @@ import NavbarItem from './NavbarItem';
 
 
 function Navbar() {
-    const router = useRouter();
     const squad = useRecoilValue(squadState);
     const chat = useRecoilValue(chatState);
     const creator = useRecoilValue(creatorState);

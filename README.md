@@ -1,13 +1,29 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ddb93033-22c1-484b-968f-1f15aaaec5cf/deploy-status)](https://app.netlify.com/sites/twitch-squad/deploys)
+# 🎛 Twitch Squad
+Create a squad of your favorite streamers. Powered by Next.js, Recoil and Tailwind CSS.
 
-## Running your instance
+## 📦 Used packages
+| 📦 Package  | 📋 Reasons |
+| ------------- | ------------- |
+| Typescript  | type safety  |
+| Tailwind CSS  | css framework  |
+| Next | react framework  |
+| Recoil | state management  |
+| react-twitch-embed | twitch embed wrapper in react |
+| Hero Icons | Icons |
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
+## 🚀 Running
+```
+git clone https://github.com/emigrek/twitch-squad
+cd twitch-squad
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run development server
+```
+npm run dev
+```
+or
+run production build
+```
+npm run build
+```
